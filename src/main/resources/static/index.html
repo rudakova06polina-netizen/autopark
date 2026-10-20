@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автопарк</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Автопарк</h1>
+
+    <form id="carForm">
+        <input type="hidden" id="carId">
+        <input type="text" id="brand" placeholder="Марка" required>
+        <input type="number" id="releaseYear" placeholder="Год выпуска" required>
+        <input type="date" id="registrationDate" required>
+        <input type="text" id="ownerName" placeholder="ФИО владельца" required>
+        <button type="submit" id="saveBtn">Добавить</button>
+        <button type="button" id="cancelBtn" class="hidden">Отмена</button>
+    </form>
+    <div id="error" class="error"></div>
+
+    <div class="toolbar">
+        <input type="text" id="search" placeholder="Поиск по марке или владельцу">
+        <select id="order">
+            <option value="asc">Год: по возрастанию</option>
+            <option value="desc">Год: по убыванию</option>
+        </select>
+        <span>Записей: <b id="counter">0</b></span>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Марка</th>
+            <th>Год выпуска</th>
+            <th>Дата постановки на учёт</th>
+            <th>ФИО владельца</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <h2>Постановка на учёт за последние 30 дней</h2>
+    <div id="histogram"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
